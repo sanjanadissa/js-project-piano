@@ -48,35 +48,17 @@
     </div>
   </div>
 
-  <audio data-key="65" src="sounds/piano-c_C_major.wav"></audio>
-  <audio data-key="83" src="sounds/piano-note-d_D_major.wav"></audio>
-  <audio data-key="68" src="sounds/piano-e_E_major.wav"></audio>
-  <audio data-key="70" src="sounds/piano-note-f_F_major.wav"></audio>
-  <audio data-key="71" src="sounds/piano-g_G_major.wav"></audio>  
-  <audio data-key="72" src="sounds/piano-a_A_major.wav"></audio>
-  <audio data-key="74" src="sounds/piano-note-b_B_major.wav"></audio>
-  <audio data-key="75" src="sounds/tom.wav"></audio>
-  <audio data-key="76" src="sounds/ride.wav"></audio>
+  <audio data-key="65" src="./sounds/piano-c_C_major.wav"></audio>
+  <audio data-key="83" src="./sounds/piano-note-d_D_major.wav"></audio>
+  <audio data-key="68" src="./sounds/piano-e_E_major.wav"></audio>
+  <audio data-key="70" src="./sounds/piano-note-f_F_major.wav"></audio>
+  <audio data-key="71" src="./sounds/piano-g_G_major.wav"></audio>  
+  <audio data-key="72" src="./sounds/piano-a_A_major.wav"></audio>
+  <audio data-key="74" src="./sounds/piano-note-b_B_major.wav"></audio>
+  <audio data-key="75" src="./sounds/tom.wav"></audio>
+  <audio data-key="76" src="./sounds/ride.wav"></audio>
 
-<script>
-function play(e){
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-  if(!audio) return;
-  audio.currentTime = 0;
-  audio.play();
-  key.classList.add('playing');
- 
-}
-
-function removetransition(e){
-  if(e.propertyName !== 'transform') return;
-  this.classList.remove('playing');
-  }
-  window.addEventListener('keydown',play);
-   const keys = document.querySelectorAll('.key');
-  keys.forEach (key => key.addEventListener('transitionend',removetransition));
-</script>
+<script src="./func.js"> </script>
 
 
 </body>
